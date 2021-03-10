@@ -6,3 +6,30 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/* Select all elements */
+* {
+    margin: 0; /* some elements have these by default, we wnat to remove them */
+    padding: 0;
+    box-sizing: border-box; /* don't add padding/borders to the height/width of the element  */
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color:  #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh; /* 95% of the viewport height */
+    background-image: linear-gradient(to right bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 131, 0.8)),
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top; /* Fix the bg to top */
+    
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* polygon(x y, x y, x y, x y); coordinates - advanced CSS */
+}
