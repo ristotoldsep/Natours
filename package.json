@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ristotoldsep/Natours.git"
+  },
+  "author": "Rix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ristotoldsep/Natours/issues"
+  },
+  "homepage": "https://github.com/ristotoldsep/Natours#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
