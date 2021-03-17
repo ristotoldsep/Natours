@@ -11,6 +11,9 @@ $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
 
+$color-grey-dark: #777;
+$color-white: #fff;
+
 /* Select all elements */
 * {
     margin: 0; /* some elements have these by default, we wnat to remove them */
@@ -23,7 +26,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
-    color:  #777;
+    color: $color-grey-dark;
     padding: 30px;
 }
 
@@ -31,8 +34,8 @@ body {
     position: relative; /* Origin/reference - top, left etc start to count from here */
     height: 95vh; /* 95% of the viewport height */
     background-image: linear-gradient(to right bottom,
-    rgba(126, 213, 111, 0.8),
-    rgba(40, 180, 131, 0.8)),
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
     url(../img/hero.jpg);
     background-size: cover;
     background-position: top; /* Fix the bg to top */
@@ -65,7 +68,7 @@ body {
 }
 
 .heading-primary {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
 
     backface-visibility: hidden; /* removes shakiness from animation.. */
@@ -170,8 +173,8 @@ body {
 }
 
 .btn-white {
-    background-color: #fff;
-    color: #777;
+    background-color: $color-white;
+    color: $color-grey-dark;
 }
 
 /* Same as .btn, but right after it - basiclly a child element */
@@ -189,7 +192,7 @@ body {
 }
 
 .btn-white::after {
-    background-color: #fff;
+    background-color: $color-white;
 }
 
 .btn:hover::after {
