@@ -7,20 +7,26 @@ Dark green: #28b485
 
 */
 /* Select all elements */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   /* some elements have these by default, we wnat to remove them */
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
   /* don't add padding/borders to the height/width of the element  */ }
+
+html {
+  font-size: 62.5%;
+  /* 10px;  = 10px / 16px (default in most browsers) We set percentage because some people like to increase the browser font-size! */ }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px; }
+  padding: 3rem;
+  box-sizing: border-box; }
 
 .header {
   position: relative;
@@ -34,20 +40,20 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* polygon(x y, x y, x y, x y); coordinates - advanced CSS */ }
 
-.logobox {
+.header__logo-box {
   position: absolute;
-  top: 40px;
+  top: 4rem;
   /* WE NEED TO SET PARENT ELEMENT (header) TO RELATIVE TO USE THESE VALUES */
-  left: 40px; }
+  left: 4rem; }
 
-.logo {
-  height: 35px; }
+.header__logo {
+  height: 3.5rem; }
 
-.logobox:hover {
+.header__logo-box:hover {
   transform: scale(1.2);
   transition-duration: 1s; }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -59,14 +65,14 @@ body {
   text-transform: uppercase;
   backface-visibility: hidden;
   /* removes shakiness from animation.. */
-  margin-bottom: 60px; }
+  margin-bottom: 6rem; }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   /* Changing span (inline-element) to block = creates line break automatically! */
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   /* Using the moveinleft animation created with keyframes below */
   animation-duration: 1s;
@@ -75,12 +81,12 @@ body {
         animation-iteration-count: 3
     */ }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   /* Changing span (inline-element) to block = creates line break automatically! */
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -91,9 +97,9 @@ body {
   /* Controlling the animation in time - 0% = start, 100% = finish */
   0% {
     opacity: 0;
-    transform: translateX(-100px); }
+    transform: translateX(-10rem); }
   80% {
-    transform: translateX(15px); }
+    transform: translateX(1.5rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -102,9 +108,9 @@ body {
   /* Controlling the animation in time - 0% = start, 100% = finish */
   0% {
     opacity: 0;
-    transform: translateX(100px); }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-15px); }
+    transform: translateX(-1.5rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -124,27 +130,28 @@ body {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   /* top-bottom, right-left */
-  border-radius: 100px;
+  border-radius: 10rem;
   /* round corners */
   transition: all .2s;
   /* works on transforms below */
   position: relative;
-  /* ::after pseudo-element is absolute below */ }
+  /* ::after pseudo-element is absolute below */
+  font-size: 1.6rem; }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.3rem);
   /* - to go up - transition has to be on the parent element!*/
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* x, y, blur, color */ }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   /* x, y, blur, color */ }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777; }
 
@@ -155,7 +162,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   /* Absolute positioning has to have a reference! (relative) */
   top: 0;
@@ -163,14 +170,14 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff; }
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0; }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 1s ease-out .75s;
   /* Last one is delay! */
   animation-fill-mode: backwards;
