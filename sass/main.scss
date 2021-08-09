@@ -13,6 +13,7 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 
 /* Select all elements */
 *,
@@ -48,31 +49,40 @@ body {
     background-position: top; /* Fix the bg to top */
     
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* polygon(x y, x y, x y, x y); coordinates - advanced CSS */
-}
-.header__logo-box { 
-    position: absolute;
-    top: 4rem; /* WE NEED TO SET PARENT ELEMENT (header) TO RELATIVE TO USE THESE VALUES */
-    left: 4rem;
-}
 
-.header__logo {
+    //Same as .header__logo-box
+    &__logo-box {
+        position: absolute;
+        top: 4rem; // WE NEED TO SET PARENT ELEMENT (header) TO RELATIVE TO USE THESE VALUES 
+        left: 4rem;
+    }
+
+    &__logo {
     height: 3.5rem; 
-}
+    }
 
-.header__logo-box:hover {
-    transform: scale(1.2);
-    transition-duration: 1s;
-}
+    &__logo-box:hover {
+        transform: scale(1.2);
+        transition-duration: 1s;
+    }
 
-.header__text-box {
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate( /* CENTERING THE TITLE BOX */
+            -50%, -50%
+        );
+        text-align: center;
+    }
+}
+/* .header__logo-box { 
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate( /* CENTERING THE TITLE BOX */
-        -50%, -50%
-    );
-    text-align: center;
-}
+    top: 4rem; // WE NEED TO SET PARENT ELEMENT (header) TO RELATIVE TO USE THESE VALUES 
+    left: 4rem;
+} */
+
+
 
 .heading-primary {
     color: $color-white;
@@ -172,12 +182,12 @@ body {
 
 .btn:hover {
     transform: translateY(-.3rem); /* - to go up - transition has to be on the parent element!*/
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* x, y, blur, color */
+    box-shadow: 0 1rem 2rem rgba($color-black,.2); /* x, y, blur, color */
 }
 
 .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2); /* x, y, blur, color */
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* x, y, blur, color */
 }
 
 .btn--white {
@@ -204,7 +214,7 @@ body {
 }
 
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
+    transform: scaleX(1.4) scaleY(1.7);
     opacity: 0;
 }
 

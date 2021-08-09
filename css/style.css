@@ -39,27 +39,27 @@ body {
   /* Fix the bg to top */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* polygon(x y, x y, x y, x y); coordinates - advanced CSS */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__logo-box:hover {
+    transform: scale(1.2);
+    transition-duration: 1s; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  /* WE NEED TO SET PARENT ELEMENT (header) TO RELATIVE TO USE THESE VALUES */
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__logo-box:hover {
-  transform: scale(1.2);
-  transition-duration: 1s; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
+/* .header__logo-box { 
+    position: absolute;
+    top: 4rem; // WE NEED TO SET PARENT ELEMENT (header) TO RELATIVE TO USE THESE VALUES 
+    left: 4rem;
+} */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
@@ -174,7 +174,7 @@ body {
   background-color: #fff; }
 
 .btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
+  transform: scaleX(1.4) scaleY(1.7);
   opacity: 0; }
 
 .btn--animated {
