@@ -66,31 +66,29 @@ body {
   backface-visibility: hidden;
   /* removes shakiness from animation.. */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  /* Changing span (inline-element) to block = creates line break automatically! */
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  /* Using the moveinleft animation created with keyframes below */
-  animation-duration: 1s;
-  /* 
+  .heading-primary--main {
+    display: block;
+    /* Changing span (inline-element) to block = creates line break automatically! */
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    /* Using the moveinleft animation created with keyframes below */
+    animation-duration: 1s;
+    /* 
         animation-delay: 3s; wait 3s before start
         animation-iteration-count: 3
     */ }
-
-.heading-primary--sub {
-  display: block;
-  /* Changing span (inline-element) to block = creates line break automatically! */
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 1.75rem;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* animation: moveInRight 1s ease-out */ }
+  .heading-primary--sub {
+    display: block;
+    /* Changing span (inline-element) to block = creates line break automatically! */
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation: moveInRight 1s ease-out */ }
 
 /* Creating animations with keyframes */
 @keyframes moveInLeft {
@@ -125,60 +123,53 @@ body {
     transform: translate(0); } }
 
 /* : -> pseudo-elements */
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  /* top-bottom, right-left */
-  border-radius: 10rem;
-  /* round corners */
-  transition: all .2s;
-  /* works on transforms below */
-  position: relative;
-  /* ::after pseudo-element is absolute below */
-  font-size: 1.6rem; }
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* - to go up - transition has to be on the parent element!*/
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  /* x, y, blur, color */ }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /* x, y, blur, color */ }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* Same as .btn, but right after it - basiclly a child element */
-.btn::after {
-  content: '';
-  /* We need to specify content property */
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  /* Absolute positioning has to have a reference! (relative) */
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.7);
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInBottom 1s ease-out .75s;
-  /* Last one is delay! */
-  animation-fill-mode: backwards;
-  /* Automatiaclly add the 0% keyframe from start to the element! */ }
+.btn {
+  /* Same as &, but right after it - basiclly a child element */ }
+  .btn:link, .btn:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* top-bottom, right-left */
+    border-radius: 10rem;
+    /* round corners */
+    transition: all .2s;
+    /* works on transforms below */
+    position: relative;
+    /* ::after pseudo-element is absolute below */
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* - to go up - transition has to be on the parent element!*/
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* x, y, blur, color */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* x, y, blur, color */ }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: '';
+    /* We need to specify content property */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    /* Absolute positioning has to have a reference! (relative) */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--animated {
+    animation: moveInBottom 1s ease-out .75s;
+    /* Last one is delay! */
+    animation-fill-mode: backwards;
+    /* Automatiaclly add the 0% keyframe from start to the element! */ }
